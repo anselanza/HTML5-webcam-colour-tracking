@@ -42,7 +42,7 @@ window.addEventListener("load", function() {
     var sensitivity = 30;
 
     var ctx = canvas.getContext("2d");
-    var stableCtx = stableCanvas.getContext("2d");
+    // var stableCtx = stableCanvas.getContext("2d");
 
     var left,right, top, bottom = -1;
 
@@ -82,7 +82,7 @@ window.addEventListener("load", function() {
 
         ctx.putImageData(imageData, 0, 0);
 
-        stableCtx.clearRect(0, 0, 320, 240);
+        // stableCtx.clearRect(0, 0, 320, 240);
 
         if(left != -1) {
 
@@ -92,8 +92,8 @@ window.addEventListener("load", function() {
             ctx.lineWidth = 2;
             ctx.beginPath();
             
-            var vH = $("video").videoHeight, 
-            vW = $("video").videoWidth;
+            // var vH = $("video").videoHeight, 
+            // vW = $("video").videoWidth;
 
             var pixelPerScaleValue = scale*10;
 
@@ -108,7 +108,7 @@ window.addEventListener("load", function() {
             ctx.rect(x/2, y/2, width/2, height/2);
             ctx.stroke();
 
-            stableCtx.drawImage(video, x, y, width, height, 0, 0, 320, 240);
+            // stableCtx.drawImage(video, x, y, width, height, 0, 0, 320, 240);
         }
 
         reqAnimFrame(loop);
