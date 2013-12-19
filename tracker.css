@@ -1,0 +1,22 @@
+video {
+    border:1px solid #000000;
+    cursor: pointer;
+}
+
+canvas {
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+#sensitivitySlider {
+    width: 640px;
+}
+
+#targetColor {
+    width: 640px;
+    height: 30px;
+    border:1px solid gray;
+}
+#stableCanvas {
+    border: 1px solid gray;
+}

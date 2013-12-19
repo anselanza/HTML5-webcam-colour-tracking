@@ -12,7 +12,7 @@ window.addEventListener("load", function() {
     var video = $("video");
     var canvas = $("canvas");
 
-    var stableCanvas = $("#stableCanvas");
+    // var stableCanvas = $("#stableCanvas");
 
 
     var getUserMedia = window.navigator.getUserMedia ||
@@ -32,12 +32,17 @@ window.addEventListener("load", function() {
     }
 
     function userMediaFailed(err) {
-        console.log("Could not getUserMedia: " + err)
+        console.log("Could not getUserMedia: " + err);
     }
+
 
     var targetRed = 150;
     var targetGreen = 30;
     var targetBlue = 50;
+
+    var bc;
+    updateTargetColor(targetRed, targetGreen, targetBlue);
+
 
     var sensitivity = 30;
 
@@ -129,8 +134,8 @@ window.addEventListener("load", function() {
         targetGreen = pixel[1];
         targetBlue = pixel[2];
 
-        var bc = "rgba(" + targetRed + ", " + targetGreen + ", " + targetBlue + ", 1)";
         console.log("BC: " + bc)
+        bc = "rgba(" + targetRed + ", " + targetGreen + ", " + targetBlue + ", 1)";
         $("#targetColor").style.backgroundColor = bc;
         evt.preventDefault();
         return false;
@@ -148,12 +153,14 @@ window.addEventListener("load", function() {
             mouseY = e.layerY;
         }
 
-        return {x:mouseX, y:mouseY}
+        return {x:mouseX, y:mouseY};
     }
 
-    video.addEventListener("click", function(e) {
-        e.target.className = "rotating";
-    });
+
+    function updateTargetColor(r, g, b) {
+        bc = "rgba(" + r + ", " + g + ", " + b + ", 1)";
+        $("#targetColor").style.backgroundColor = bc;
+    }
 
 
     var slider = $("#sensitivitySlider");
