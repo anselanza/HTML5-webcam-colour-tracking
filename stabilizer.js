@@ -35,9 +35,9 @@ window.addEventListener("load", function() {
         console.log("Could not getUserMedia: " + err)
     }
 
-    var targetRed = 14;
-    var targetGreen = 145;
-    var targetBlue = 84;
+    var targetRed = 150;
+    var targetGreen = 30;
+    var targetBlue = 50;
 
     var sensitivity = 30;
 
